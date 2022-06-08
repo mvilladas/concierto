@@ -1,9 +1,31 @@
 <?php
-echo "Hola mundo";
-$host= "localhost";
-$user = "root";
-$password ="";
-$link = mysqli_connect($host,$user,$password)or die ("Error en conexion");
-$dbname = "taquillabd";
+require_once("conexion.php");
 
-mysqli_select_db($link,$dbname)or die ( "Error al conectar en base de datos");
+$funcion = $_POST["funcion"];
+
+switch ($funcion) {
+    case "agregarUsuario":
+        agregarUsuario();
+        break;
+}
+
+
+function agregarUsuario()
+{
+    $nombres = $_POST["nombre"];
+    $apellidos = $_POST["apellido"];
+    $documento = $_POST["documento"];
+    $correo = $_POST["correo"];
+    $telefono = $_POST["telefono"];
+    $edad = $_POST["edad"];
+
+    $link = conectar();
+
+    $link->query("INSERT INTO usuario(id, nombres, apellidos, documento, telefono, correo,  edad) VALUES (NULL, '$nombres','$apellidos','$documento','$telefono','$correo','$edad')");
+
+    if ($link->error != null){
+        echo "Hubo une error al guardar el usuario";
+    }
+}
+
+

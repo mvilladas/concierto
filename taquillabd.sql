@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2022 a las 07:02:01
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.0
+-- Tiempo de generación: 08-06-2022 a las 10:45:49
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,6 +48,15 @@ CREATE TABLE `evento` (
   `fecha` date NOT NULL,
   `hora` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `evento`
+--
+
+INSERT INTO `evento` (`id`, `nombre`, `artista`, `fecha`, `hora`) VALUES
+(1, 'Páramo', 'Andrés Calamaro', '2022-11-03', '17:30:03'),
+(2, 'Me importas tour', 'Andrés Cepeda', '2022-09-10', '19:00:00'),
+(3, 'Cuarteto de Nos', 'Cuartos de Nos', '2022-10-14', '19:00:00');
 
 -- --------------------------------------------------------
 
@@ -97,19 +106,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `entrada`
 --
 ALTER TABLE `entrada`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de la tabla `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restricciones para tablas volcadas

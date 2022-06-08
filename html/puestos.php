@@ -10,6 +10,7 @@
 </head>
 </head>
 <body>
+<?php require_once "../logica/funciones.php";?>
 <div class="bg-image"
      style="background-image: url('../images/fondo2.png');
             height: 100vh;
@@ -23,7 +24,13 @@
                     <label  class="form-label col-sm-2">Puesto</label>
                     <select class="form-select col" aria-label="Default select example">
                         <option selected>Escoge el evento que deseas</option>
-                        <option value="1">Diamante sur</option>
+                        <?php
+                            $eventos = consultarEventos();
+
+                            foreach ($eventos as $evento){
+                                echo "<option value=$evento[0]> $evento[1] </option>";
+                            }
+                        ?>
                     </select>
                 </div>
                 <div class="mb-3 row">

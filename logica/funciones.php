@@ -1,11 +1,15 @@
 <?php
 require_once("conexion.php");
-$funcion = $_POST["funcion"];
+
+if(isset($_POST["funcion"])){
+    $funcion = $_POST["funcion"];
+}else{
+    $funcion = "";
+};
 
 switch ($funcion) {
     case "agregarUsuario":
         agregarUsuario();
-        consultarEventos();
         break;
 }
 
@@ -24,11 +28,10 @@ function agregarUsuario()
     $link->query("INSERT INTO usuario(id, nombres, apellidos, documento, telefono, correo,  edad) VALUES (NULL, '$nombres','$apellidos','$documento','$telefono','$correo','$edad')");
 
     if ($link->error != null) {
-        echo "Hubo une error al guardar el usuario";
+        alert('Hubo un error al guardar el usuario');
     } else {
         echo "<script>
-            alert('Guardado correctamente');
-            window.location.href='../';
+            window.location.href='../html/puestos.php';
             </script>";
     }
 

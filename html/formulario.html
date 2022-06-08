@@ -16,7 +16,7 @@
         background-repeat: no-repeat;
         background-size: 100% auto;">
     <div class="container pt-5 px-5">
-        <div class="card">
+        <div class="card bg-transparent ">
             <form method="post" action="../logica/index.php" class="p-4">
                 <input type="text" name="funcion" value="agregarUsuario" hidden>
                 <h2 class="m-2 my-4">Ingreso de datos</h2>
@@ -44,7 +44,11 @@
                     <label for="edad" class="ml-5 form-label col-sm-2  ">Edad</label>
                     <input type="text" class="form-control col" id="edad" name="edad" placeholder="Ingrese la edad">
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="d-grid gap-2">
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-primary ">Enviar</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

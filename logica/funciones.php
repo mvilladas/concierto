@@ -61,6 +61,7 @@ function seleccionarEvento(){
 }
 
 function guardarCompra(){
+    $GLOBALS["entradasRegistradas"] = array();
     $link = conectar();
 
     $localidad = $_POST["localidad"];
@@ -71,10 +72,10 @@ function guardarCompra(){
     for($i = 1; $i <= $numEntradas; $i++){
         $silla = $_POST["entrada".$i];
         $link->query("INSERT INTO entrada(id, lugar, asiento, evento_id, usuario_id) VALUES (NULL, '$localidad','$silla','$evento','$usuario')");
+        array_push($GLOBALS["entradasRegistradas"],$link->insert_id);
     }
     echo "<script>
             alert('Entradas registradas correctamente');
             </script>";
-
 
 }

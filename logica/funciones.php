@@ -22,7 +22,14 @@ function agregarUsuario()
 
     $link->query("INSERT INTO usuario(id, nombres, apellidos, documento, telefono, correo,  edad) VALUES (NULL, '$nombres','$apellidos','$documento','$telefono','$correo','$edad')");
 
-    if ($link->error != null){
+    if ($link->error != null) {
         echo "Hubo une error al guardar el usuario";
+    } else {
+        echo "<script>
+            alert('Guardado correctamente');
+            window.location.href='../';
+            </script>";
     }
+
+
 }

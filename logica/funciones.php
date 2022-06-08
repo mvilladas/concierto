@@ -1,6 +1,5 @@
 <?php
 require_once("conexion.php");
-
 $funcion = $_POST["funcion"];
 
 switch ($funcion) {
@@ -27,5 +26,3 @@ function agregarUsuario()
         echo "Hubo une error al guardar el usuario";
     }
 }
-
-

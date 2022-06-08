@@ -10,19 +10,43 @@
 </head>
 </head>
 <body>
-<div class="container mt-5 px-5">
-    <form>
-        <h2 class="m-2 my-4">Ingreso de datos</h2>
-        <div class="mb-3 row">
-            <label for="lugar" class="ml-5 form-label col-sm-2  ">Nombres</label>
-            <input type="text" class="form-control col" id="lugar" name="lugar" placeholder="Ingrese los nombres">
+<div class="bg-image"
+     style="background-image: url('../images/fondo2.png');
+            height: 100vh;
+        background-repeat: no-repeat;
+        background-size: 100% auto;">
+    <div class="container pt-5 px-5">
+        <div class="card">
+            <form class="p-4">
+                <h2 class="m-2 my-4">Ingreso de datos</h2>
+                <div class="mb-3 row">
+                    <label  class="ml-5 form-label col-sm-2  ">Localidad</label>
+                    <select class="form-select col" aria-label="Default select example">
+                        <option selected>Escoge la localidad</option>
+                        <option value="1">Diamante sur</option>
+                        <option value="2">Diamante centro</option>
+                        <option value="3">Diamante norte</option>
+                        <option value="4">Platino sur</option>
+                        <option value="5">Platino centro</option>
+                        <option value="6">Platino norte</option>
+                        <option value="7">Platea alta</option>
+                        <option value="8">Platea baja</option>
+
+                    </select>
+                </div>
+                <div class="mb-3 row">
+                    <label for="puesto" class="form-label col-sm-2">Puesto</label>
+                    <input type="text" class="form-control col" id="puesto"  placeholder="Ingrese el número de silla">
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
         </div>
-        <div class="mb-3 row">
-            <label for="apellido" class="form-label col-sm-2">Apellidos</label>
-            <input type="text" class="form-control col" id="apellido"  placeholder="Ingrese los apellidos">
-        </div>
-    </form>
+
+    </div>
 </div>
+
 
 </body>
 </html>

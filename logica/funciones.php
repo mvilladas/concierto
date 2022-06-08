@@ -5,6 +5,7 @@ $funcion = $_POST["funcion"];
 switch ($funcion) {
     case "agregarUsuario":
         agregarUsuario();
+        consultarEventos();
         break;
 }
 
@@ -32,4 +33,12 @@ function agregarUsuario()
     }
 
 
+}
+
+function consultarEventos(){
+    $link = conectar();
+
+    $eventos = $link->query("SELECT * FROM evento")->fetch_all();
+
+    return $eventos;
 }

@@ -18,11 +18,12 @@
         background-size: 100% auto;">
     <div class="container pt-5 px-5">
         <div class="card tarjeta">
-            <form class="p-4">
+            <form class="p-4" method="post" action="../logica/funciones.php">
+                <input type="text" name="funcion" value="seleccionarEvento" hidden>
                 <h2 class="m-2 my-4">Ingreso de datos</h2>
                 <div class="mb-3 row">
                     <label  class="form-label col-sm-2">Evento</label>
-                    <select class="form-select col" aria-label="Default select example">
+                    <select class="form-select col" aria-label="Default select example" name="evento">
                         <option selected>Escoge el evento que deseas</option>
                         <?php
                             $eventos = consultarEventos();
@@ -35,7 +36,7 @@
                 </div>
                 <div class="mb-3 row">
                     <label for="numero" class="form-label col-sm-2">Número de entradas</label>
-                    <input type="number" class="form-control col" id="numero"  placeholder="Ingrese el número entradas">
+                    <input type="number" class="form-control col" id="numero" name="entradas" placeholder="Ingrese el número entradas">
                 </div>
                 <div class="mb-3 row">
                     <label  class="ml-5 form-label col-sm-2  ">Localidad</label>
@@ -57,7 +58,7 @@
                     <input type="text" class="form-control col" id="puesto"  placeholder="Ingrese el número de silla">
                 </div>
                 <div class="d-grid gap-2 px-5">
-                    <button type="button" class="btn btn-primary ">Enviar</button>
+                    <button type="submit" class="btn btn-primary ">Enviar</button>
                 </div>
             </form>
         </div>

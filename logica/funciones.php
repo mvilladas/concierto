@@ -11,6 +11,9 @@ switch ($funcion) {
     case "agregarUsuario":
         agregarUsuario();
         break;
+    case "seleccionarEvento":
+        seleccionarEvento();
+        break;
 }
 
 
@@ -44,4 +47,10 @@ function consultarEventos(){
     $eventos = $link->query("SELECT * FROM evento")->fetch_all();
 
     return $eventos;
+}
+
+function seleccionarEvento(){
+    $evento = $_POST["evento"];
+    $numEntradas = $_POST["entradas"];
+    header("Location: ../html/puestos.php?ev=".$evento."&ne=".$numEntradas);
 }

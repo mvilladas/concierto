@@ -10,36 +10,44 @@
 </head>
 </head>
 <body>
-<div class="container mt-5 px-5">
-    <form method="post" action="../logica/index.php">
-        <input type="text" name="funcion" value="agregarUsuario" hidden>
-        <h2 class="m-2 my-4">Ingreso de datos</h2>
-        <div class="mb-3 row">
-            <label for="nombre" class="ml-5 form-label col-sm-2  ">Nombres</label>
-            <input type="text" class="form-control col" id="nombre" name="nombre" placeholder="Ingrese los nombres">
+<div class="bg-image"
+     style="background-image: url('../images/fondo2.png');
+            height: 100vh;
+        background-repeat: no-repeat;
+        background-size: 100% auto;">
+    <div class="container pt-5 px-5">
+        <div class="card">
+            <form method="post" action="../logica/index.php" class="p-4">
+                <input type="text" name="funcion" value="agregarUsuario" hidden>
+                <h2 class="m-2 my-4">Ingreso de datos</h2>
+                <div class="mb-3 row">
+                    <label for="nombre" class="ml-5 form-label col-sm-2  ">Nombres</label>
+                    <input type="text" class="form-control col" id="nombre" name="nombre" placeholder="Ingrese los nombres">
+                </div>
+                <div class="mb-3 row">
+                    <label for="apellido" class="form-label col-sm-2">Apellidos</label>
+                    <input type="text" class="form-control col" id="apellido" name="apellido"  placeholder="Ingrese los apellidos">
+                </div>
+                <div class="mb-3 row">
+                    <label for="documento" class="ml-5 form-label col-sm-2  ">Documento</label>
+                    <input type="text" class="form-control col" id="documento" name="documento" placeholder="Ingrese el número de documento">
+                </div>
+                <div class="mb-3 row">
+                    <label for="correo" class="ml-5 form-label col-sm-2  ">Correo electrónico</label>
+                    <input type="email" class="form-control col" id="correo" name="correo" placeholder="Ingrese el correo electrónico">
+                </div>
+                <div class="mb-3 row">
+                    <label for="telefono" class="ml-5 form-label col-sm-2  ">Teléfono</label>
+                    <input type="text" class="form-control col" id="telefono" name="telefono" placeholder="Ingrese el número de teléfono">
+                </div>
+                <div class="mb-3 row">
+                    <label for="edad" class="ml-5 form-label col-sm-2  ">Edad</label>
+                    <input type="text" class="form-control col" id="edad" name="edad" placeholder="Ingrese la edad">
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
         </div>
-        <div class="mb-3 row">
-            <label for="apellido" class="form-label col-sm-2">Apellidos</label>
-            <input type="text" class="form-control col" id="apellido" name="apellido"  placeholder="Ingrese los apellidos">
-        </div>
-        <div class="mb-3 row">
-            <label for="documento" class="ml-5 form-label col-sm-2  ">Documento</label>
-            <input type="text" class="form-control col" id="documento" name="documento" placeholder="Ingrese el número de documento">
-        </div>
-        <div class="mb-3 row">
-            <label for="correo" class="ml-5 form-label col-sm-2  ">Correo electrónico</label>
-            <input type="email" class="form-control col" id="correo" name="correo" placeholder="Ingrese el correo electrónico">
-        </div>
-        <div class="mb-3 row">
-            <label for="telefono" class="ml-5 form-label col-sm-2  ">Teléfono</label>
-            <input type="text" class="form-control col" id="telefono" name="telefono" placeholder="Ingrese el número de teléfono">
-        </div>
-        <div class="mb-3 row">
-            <label for="edad" class="ml-5 form-label col-sm-2  ">Edad</label>
-            <input type="text" class="form-control col" id="edad" name="edad" placeholder="Ingrese la edad">
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
+    </div>
 </div>
 
 </body>

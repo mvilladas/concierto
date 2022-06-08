@@ -10,13 +10,12 @@
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-<div class="bg-image"
-     style="background-image: url('../images/fondo2.png');
-            height: 100vh;
+<body style="background-image: url('../images/fondo2.png');
         background-repeat: no-repeat;
-        background-size: 100% auto;
-        background-attachment: fixed;"
+        background-size: 100%;
+        background-attachment: fixed;
+">
+<div class="bg-image"
 >
     <div class="container pt-5">
         <?php

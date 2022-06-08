@@ -42,8 +42,8 @@
                     <label for="numero" class="form-label col-sm-2">Número de entradas</label>
                     <input type="number" class="form-control col" id="numero" name="entradas" placeholder="Ingrese el número entradas">
                 </div>
-                <div class="d-grid gap-2 px-5">
-                    <button type="submit" class="btn btn-primary ">Enviar</button>
+                <div class="d-flex justify-content-around">
+                    <button type="submit" class="btn btn-primary w-25">Enviar</button>
                 </div>
             </form>
         </div>

@@ -1,6 +1,7 @@
 <?php
 require_once("conexion.php");
 
+session_start();
 if(isset($_POST["funcion"])){
     $funcion = $_POST["funcion"];
 }else{
@@ -61,7 +62,7 @@ function seleccionarEvento(){
 }
 
 function guardarCompra(){
-    $GLOBALS["entradasRegistradas"] = array();
+    $_SESSION["entradasRegistradas"] = array();
     $link = conectar();
 
     $localidad = $_POST["localidad"];
@@ -72,10 +73,22 @@ function guardarCompra(){
     for($i = 1; $i <= $numEntradas; $i++){
         $silla = $_POST["entrada".$i];
         $link->query("INSERT INTO entrada(id, lugar, asiento, evento_id, usuario_id) VALUES (NULL, '$localidad','$silla','$evento','$usuario')");
-        array_push($GLOBALS["entradasRegistradas"],$link->insert_id);
+        array_push($_SESSION["entradasRegistradas"],$link->insert_id);
     }
     echo "<script>
             alert('Entradas registradas correctamente');
             </script>";
 
+    header("Location: ../html/boleta.php");
+}
+
+function consultarBoletas(){
+    $link = conectar();
+    $entradas = array();
+    foreach($_SESSION["entradasRegistradas"] as $id){
+        $entrada = $link->query("SELECT lugar,asiento, nombre, artista, fecha, hora,nombres,apellidos FROM entrada join evento on evento.id=evento_id join usuario on usuario.id = usuario_id WHERE entrada.id = '$id'")->fetch_object();
+        array_push($entradas,$entrada);
+    }
+
+    return $entradas;
 }

@@ -27,14 +27,14 @@
                     <label  class="ml-5 form-label col-sm-2  ">Localidad</label>
                     <select class="form-select col" aria-label="Default select example" name="localidad">
                         <option selected>Escoge la localidad</option>
-                        <option value="1">Diamante sur</option>
-                        <option value="2">Diamante centro</option>
-                        <option value="3">Diamante norte</option>
-                        <option value="4">Platino sur</option>
-                        <option value="5">Platino centro</option>
-                        <option value="6">Platino norte</option>
-                        <option value="7">Platea alta</option>
-                        <option value="8">Platea baja</option>
+                        <option value="Diamante sur">Diamante sur</option>
+                        <option value="Diamante centro">Diamante centro</option>
+                        <option value="Diamante norte">Diamante norte</option>
+                        <option value="Platino sur">Platino sur</option>
+                        <option value="Platino centro">Platino centro</option>
+                        <option value="Platino norte">Platino norte</option>
+                        <option value="Platea alta">Platea alta</option>
+                        <option value="Platea baja">Platea baja</option>
 
                     </select>
                 </div>

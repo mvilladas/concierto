@@ -14,6 +14,9 @@ switch ($funcion) {
     case "seleccionarEvento":
         seleccionarEvento();
         break;
+    case "guardarCompra":
+        guardarCompra();
+        break;
 }
 
 
@@ -33,8 +36,9 @@ function agregarUsuario()
     if ($link->error != null) {
         alert('Hubo un error al guardar el usuario');
     } else {
+        $url = "../html/puestos.php?u=".$link->insert_id;
         echo "<script>
-            window.location.href='../html/puestos.php';
+            window.location.href='$url';
             </script>";
     }
 
@@ -51,6 +55,26 @@ function consultarEventos(){
 
 function seleccionarEvento(){
     $evento = $_POST["evento"];
+    $usuario = $_POST["usuario"];
     $numEntradas = $_POST["entradas"];
-    header("Location: ../html/puestos.php?ev=".$evento."&ne=".$numEntradas);
+    header("Location: ../html/entradas.php?ev=".$evento."&ne=".$numEntradas."&u=".$usuario);
+}
+
+function guardarCompra(){
+    $link = conectar();
+
+    $localidad = $_POST["localidad"];
+    $evento = $_POST["evento"];
+    $usuario = $_POST["usuario"];
+    $numEntradas = $_POST["numEntradas"];
+
+    for($i = 1; $i <= $numEntradas; $i++){
+        $silla = $_POST["entrada".$i];
+        $link->query("INSERT INTO entrada(id, lugar, asiento, evento_id, usuario_id) VALUES (NULL, '$localidad','$silla','$evento','$usuario')");
+    }
+    echo "<script>
+            alert('Entradas registradas correctamente');
+            </script>";
+
+
 }

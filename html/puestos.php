@@ -20,6 +20,10 @@
         <div class="card tarjeta">
             <form class="p-4" method="post" action="../logica/funciones.php">
                 <input type="text" name="funcion" value="seleccionarEvento" hidden>
+                <?php
+                            $idUser = $_GET["u"];
+                            echo "<input type='text' name='usuario' value='$idUser' hidden>";
+                            ?>
                 <h2 class="m-2 my-4">Ingreso de datos</h2>
                 <div class="mb-3 row">
                     <label  class="form-label col-sm-2">Evento</label>
